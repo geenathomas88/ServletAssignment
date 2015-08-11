@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="signup" method ="post">
+		<table style='background-color: khaki;border: 1px solid blue' align="center">
+		<tr><td colspan="3" align="right"><h3>New User Registration</h3></td></tr>
+		<tr>
+			<td>First Name:</td><td><input type="text" name ="firstname"/></td>
+			<td>Last Name:</td><td><input type="text" name ="lastname"/></td>		
+		</tr><br/>
+		<tr>
+			<td>Email:</td><td><input type="text" name ="email"/></td>
+			<td>Phone Number:</td><td><input type="text" name ="phonenumber"/></td>		
+		</tr>	
+		<tr>
+			<td>Age:</td><td><input type="number" name ="age"/></td>
+			<td>Gender:</td><td><input type="radio" name ="gender" value="m" checked="checked"/>Male
+					<input type="radio" name ="gender" value="f"/>Female</td>
+		</tr>
+		<tr>
+			<td>Password:</td><td><input type="password" name ="password"/></td>
+			<td>Confirm Password:</td><td><input type="password" name ="confirmpassword"/></td>					
+		</tr>
+		<br/><br/><tr></tr>
+		<tr>
+			<td colspan="3" align="right">
+			<input type="reset" value="Reset" name="action" style='background-color: LightSkyBlue '>
+			<input type="submit" value="Submit" name="action" style='background-color: LightSkyBlue '>
+			<input type="submit" value="Cancel" name="action" style='background-color: LightSkyBlue '></td></tr>
+	</table>
+	</form>
+</body>
+</html>
