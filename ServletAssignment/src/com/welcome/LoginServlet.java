@@ -19,9 +19,12 @@ public class LoginServlet extends HttpServlet{
 		resp.setContentType("text/html");
 		PrintWriter pw = resp.getWriter();
 		
+		
 		if(User.validateLogin(uName, password)){
+			req.getRequestDispatcher("header.html").include(req, resp);
 			pw.write("<h2 style='color:blue' align= center>Welcome</h2>");
 			pw.write("<h4 align = right>You are logged in as "+uName+"</h4>");
+			req.getRequestDispatcher("footer.html").include(req, resp);
 		}else{
 			System.out.println("here");
 			pw.write("<h4 style= 'color:red'>Sorry!! Incorrect User Name/ Password. Try Again.</h4>");
