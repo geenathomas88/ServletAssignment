@@ -5,6 +5,10 @@
     <welcome-file>login.html</welcome-file>
    </welcome-file-list>
    
+   <listener>
+   	 <listener-class>com.common.DatabaseListener</listener-class>
+   </listener>
+   
    	<servlet>
 		<servlet-name>welcome</servlet-name>
 		<servlet-class>com.welcome.WelcomeServlet</servlet-class>
@@ -41,4 +45,33 @@
 		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
 			  
+	<servlet>
+		<servlet-name>showUser</servlet-name>
+		<servlet-class>com.pages.ShowUserDetails</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>showUser</servlet-name>
+		<url-pattern>/showUser</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- CONTEXT PARAM -->
+	<context-param>
+		<param-name>driver</param-name>
+		<param-value>com.mysql.jdbc.Driver</param-value>
+	</context-param>
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:mysql://localhost:3306/servlet_assignment</param-value>
+	</context-param>
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<context-param>
+		<param-name>password</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<!-- CONTEXT PARAM -->
+	
 </web-app>
