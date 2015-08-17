@@ -26,7 +26,6 @@ public class LoginServlet extends HttpServlet{
 			pw.write("<h4 align = right>You are logged in as "+uName+"</h4>");
 			req.getRequestDispatcher("footer.html").include(req, resp);
 		}else{
-			System.out.println("here");
 			pw.write("<h4 style= 'color:red'>Sorry!! Incorrect User Name/ Password. Try Again.</h4>");
 			RequestDispatcher rd = req.getRequestDispatcher("/login.html");
 			rd.include(req,resp);
