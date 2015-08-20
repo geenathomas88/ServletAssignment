@@ -54,7 +54,41 @@
 		<url-pattern>/showUser</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>composemail</servlet-name>
+		<servlet-class>com.pages.ComposeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>composemail</servlet-name>
+		<url-pattern>/composemail</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>inbox</servlet-name>
+		<servlet-class>com.pages.InboxServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inbox</servlet-name>
+		<url-pattern>/inbox</url-pattern>
+	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>sent</servlet-name>
+		<servlet-class>com.pages.SentMailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sent</servlet-name>
+		<url-pattern>/sent</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>drafts</servlet-name>
+		<servlet-class>com.pages.DraftsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>drafts</servlet-name>
+		<url-pattern>/drafts</url-pattern>
+	</servlet-mapping>	
 	<!-- CONTEXT PARAM -->
 	<context-param>
 		<param-name>driver</param-name>

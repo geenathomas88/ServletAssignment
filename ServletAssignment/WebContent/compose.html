@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Compose Mail</title>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+            <img src="header.jpg" width="100%" height="65" border="0" alt="header"></a>
+        </td>
+    </tr>
+    <tr>
+       <td align="right">
+            <a href="showUser">Profile</a> |          
+            <a href="sent">Sent</a> |
+           	<a href="#">Compose</a> |
+           	<a href="inbox">Inbox</a> |
+           	<a href="drafts">Drafts</a> |
+           	<a href="logout">Logout</a>
+        </td>
+    </tr>
+</table>
+	<h2 style='color:blue' align= center>Compose Mail</h2>
+	<form action="composemail" method="post">
+		<table style='background-color: #F0F8FF;border: 1px solid blue; width: 50%' align="center">
+			<tr><td>To :</td>
+			<td>
+				<select name="to_id"><option value=1>Geena</option>
+									<option value=2>Andrea</option>
+									<option value=2>Ravi</option>
+									<option value=2>Bibin</option>
+									<option value=2>Sundar</option>
+				</select>
+			</td></tr>
+			<tr><td>Subject: </td><td><input type="text" name ="subject"></td></tr>
+			<tr><td>Message : </td><td><textarea  rows="20" cols="50" name="message"></textarea></td>
+			<tr><td colspan="2" align="center"><input type="submit" value="Send" name="action" style='background-color: LightSkyBlue '>
+			<input type="submit" value="Save" name="action" style='background-color: LightSkyBlue '></td>
+			</tr>
+		</table>
+	</form>
+<div id="footer">Copyright 2015-2017 by Application Developer. All Rights Reserved.</div>
+<style>
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:25px;   /* Height of the footer */
+   background:#6cf;
+   text-align: center;
+}
+</style>
+</body>
+</html>

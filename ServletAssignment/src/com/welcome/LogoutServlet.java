@@ -20,7 +20,7 @@ public class LogoutServlet extends HttpServlet{
 		HttpSession session = req.getSession();
 		session.setAttribute("currentLogin", "");
 		session.removeAttribute("currentLogin");
-		System.out.println("Seessiiooo in logout---"+session.getAttribute("currentLogin"));
+		//System.out.println("Seessiiooo in logout---"+session.getAttribute("currentLogin"));
 		session.setMaxInactiveInterval(0);
 		session.invalidate();
 		
