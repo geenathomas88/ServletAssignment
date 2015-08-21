@@ -89,6 +89,24 @@
 		<servlet-name>drafts</servlet-name>
 		<url-pattern>/drafts</url-pattern>
 	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>viewmessage</servlet-name>
+		<servlet-class>com.pages.ViewMessage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewmessage</servlet-name>
+		<url-pattern>/viewmessage</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>forgotpassword</servlet-name>
+		<servlet-class>com.welcome.ForgotPassword</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>forgotpassword</servlet-name>
+		<url-pattern>/forgotpassword</url-pattern>
+	</servlet-mapping>	
 	<!-- CONTEXT PARAM -->
 	<context-param>
 		<param-name>driver</param-name>

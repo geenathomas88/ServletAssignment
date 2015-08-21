@@ -199,9 +199,26 @@ public class DBLayer {
 		}
 		return userName;
 	}
+	
 	private static java.sql.Date getCurrentDate() {
 	    java.util.Date today = new java.util.Date();
 	    return new java.sql.Date(today.getTime());
+	}
+
+	public static MailContent message(int mailId, Connection con) throws SQLException {
+		
+		String sql = "SELECT * FROM mail_content where mail_id= ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, mailId);
+		ResultSet rs = ps.executeQuery();
+		MailContent message = new MailContent();
+		while(rs.next()){
+			message.setId(rs.getInt(1));
+			message.setMessage_content(rs.getString(2));
+			message.setMail_id(rs.getInt(3));
+			message.setSubject(rs.getString(4));
+		}
+		return message;
 	}
 
 }

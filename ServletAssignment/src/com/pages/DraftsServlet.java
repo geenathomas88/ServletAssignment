@@ -61,7 +61,7 @@ public class DraftsServlet extends HttpServlet{
 				MailContent mailContent= (MailContent) messageEntry.getValue();
 				
 				pw.write("<tr><td>"+mail.get_UserName(mail.getTo_userid(), con)+"</td>");
-				pw.write("<td>"+mailContent.getSubject()+"</td>");
+				pw.write("<td><a href='viewmessage?mailid="+mailContent.getMail_id()+"'>"+mailContent.getSubject()+"</a></td>");
 				pw.write("<td>"+mail.getSend_date()+"</td></tr>");
 			}
 			

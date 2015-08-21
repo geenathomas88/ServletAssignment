@@ -95,7 +95,7 @@ public class User {
 		
 		User user =null;
 		user = DBLayer.findUser(uname, pwd, con);
-		System.out.println("In user------"+user.getId());
+		
 		if (user== null)
 			return false;
 		else

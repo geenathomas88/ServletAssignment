@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.db.DBLayer;
+import com.mailer.SendMail;
 
 public class ComposeServlet extends HttpServlet{
 
@@ -52,6 +53,11 @@ public class ComposeServlet extends HttpServlet{
 		try {
 			if(DBLayer.insertMail(to,from,message,subject,status,con)){
 				//send mail code goes here---
+				String tomail = "itstough0@gmail.com";
+
+		        String user = "itstough0@gmail.com";
+		        String pass = "dummy123456789";
+				SendMail.send(tomail,subject, message, user, pass);
 				pw.write("Mail send successfully");
 				RequestDispatcher rd = req.getRequestDispatcher("inbox");
 				rd.include(req,resp);}
