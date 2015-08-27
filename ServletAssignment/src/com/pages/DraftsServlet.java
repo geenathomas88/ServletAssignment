@@ -52,7 +52,7 @@ public class DraftsServlet extends HttpServlet{
 			pw.write("<h2 style='color:blue' align= center>Drafts</h2>");
 			
 			pw.write("<h4 align = right>You are logged in as "+currentUser.getUsername()+"</h4>");
-			pw.write("<table style='background-color: #F0F8FF;border: 1px solid blue;width:50% ' align='center'><tr bgcolor='#00BFFF'><th>From</th><th>Subject</th><th>Date</th></tr>");
+			pw.write("<table style='background-color: #F0F8FF;border: 1px solid blue;width:50% ' align='center'><tr bgcolor='#00BFFF'><th>From</th><th>Subject</th><th>Date</th><th>Click to send</th></tr>");
 			
 			Iterator<Entry<Mail, MailContent>> messageIterator = messageHash.entrySet().iterator();
 			while(messageIterator.hasNext()){
@@ -62,7 +62,8 @@ public class DraftsServlet extends HttpServlet{
 				
 				pw.write("<tr><td>"+mail.get_UserName(mail.getTo_userid(), con)+"</td>");
 				pw.write("<td><a href='viewmessage?mailid="+mailContent.getMail_id()+"'>"+mailContent.getSubject()+"</a></td>");
-				pw.write("<td>"+mail.getSend_date()+"</td></tr>");
+				pw.write("<td>"+mail.getSend_date()+"</td>");
+				//pw.write("<td><a href='composemail?message="+mailContent.getMessage_content()+"&to_id="+mail.getTo_userid()+"&subject="+mailContent.getSubject()+"&action=Send'>Send</a></td></tr>");
 			}
 			
 			req.getRequestDispatcher("footer.html").include(req, resp);

@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.model.Mail;
@@ -20,7 +18,7 @@ public class DBLayer {
 		
 		String sql = "SELECT * FROM users where username = ? and password = ?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		System.out.println(sql);
+		//System.out.println(sql);
 		ps.setString(1, uname);
 		ps.setString(2, pwd);
 		ResultSet rs = ps.executeQuery();
@@ -47,7 +45,7 @@ public class DBLayer {
 		String sql = "INSERT INTO users ( firstname, lastname, username, email, phonenumber, age, gender, password) VALUES (?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		
-		System.out.println(sql);
+		//System.out.println(sql);
 		ps.setString(1, user.getFirstname());
 		ps.setString(2, user.getLastname());
 		ps.setString(3, user.getUsername());
@@ -69,8 +67,8 @@ public class DBLayer {
 		Statement st = con.createStatement();
 		//PreparedStatement ps = con.prepareStatement(sql);
 		//ps.setString(1, uname);
-		System.out.println(uname);
-		System.out.println(sql);
+		//System.out.println(uname);
+		//System.out.println(sql);
 		//ResultSet rs = ps.executeQuery(sql);
 		ResultSet rs = st.executeQuery(sql);
 		if(rs.next())
@@ -221,4 +219,16 @@ public class DBLayer {
 		return message;
 	}
 
+	public static HashMap<Integer, String> allUsers(Connection con) throws SQLException{
+		String sql = "SELECT * FROM users";
+		PreparedStatement ps = con.prepareStatement(sql);
+		
+		ResultSet rs = ps.executeQuery();
+		HashMap<Integer, String> userMap = new HashMap<>();
+		while(rs.next()){
+			userMap.put(rs.getInt(1), rs.getString(4));
+		}
+		return userMap;
+		
+	}
 }

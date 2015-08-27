@@ -17,13 +17,19 @@ public class LogoutServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		PrintWriter pw = resp.getWriter();
-		HttpSession session = req.getSession();
-		session.setAttribute("currentLogin", "");
-		session.removeAttribute("currentLogin");
-		//System.out.println("Seessiiooo in logout---"+session.getAttribute("currentLogin"));
-		session.setMaxInactiveInterval(0);
-		session.invalidate();
+	//	HttpSession session = req.getSession();
 		
+
+		HttpSession session = req.getSession(false);
+        System.out.println("User="+session.getAttribute("currentLogin"));
+        if(session != null){
+        	session.setAttribute("currentLogin", null);
+        	resp.setHeader("Cache-Control", "no-cache, no-store");
+    		resp.setHeader("Pragma", "no-cache");
+            session.invalidate();
+        }
+
+		System.out.println("session in logout--"+session);
 		pw.write("<h4 style= 'color:red'>Logged Out Successfully!</h4>");
 		RequestDispatcher rd = req.getRequestDispatcher("/login.html");
 		rd.include(req,resp);

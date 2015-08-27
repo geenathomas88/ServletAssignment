@@ -9,6 +9,41 @@
    	 <listener-class>com.common.DatabaseListener</listener-class>
    </listener>
    
+    <!-- Filter -->
+  <filter>
+    <filter-name>AuthenticationFilter</filter-name>
+    <filter-class>com.filter.AuthenticationFilter</filter-class>
+  </filter>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/inbox</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/compose.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/drafts</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/sent</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/viewmessage</url-pattern>
+	</filter-mapping>	
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/showUser</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/getcompose</url-pattern>
+	</filter-mapping>		
+   <!-- filter -->
+   
    	<servlet>
 		<servlet-name>welcome</servlet-name>
 		<servlet-class>com.welcome.WelcomeServlet</servlet-class>
@@ -53,7 +88,15 @@
 		<servlet-name>showUser</servlet-name>
 		<url-pattern>/showUser</url-pattern>
 	</servlet-mapping>
-	
+
+	<servlet>
+		<servlet-name>getcompose</servlet-name>
+		<servlet-class>com.pages.MessageCompose</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getcompose</servlet-name>
+		<url-pattern>/getcompose</url-pattern>
+	</servlet-mapping>	
 	<servlet>
 		<servlet-name>composemail</servlet-name>
 		<servlet-class>com.pages.ComposeServlet</servlet-class>

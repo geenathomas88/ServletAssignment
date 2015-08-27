@@ -45,7 +45,7 @@ public class Mail {
 	}
 		
 	public String get_UserName(int id,Connection con) throws SQLException{
-		System.out.println(id);
+		//System.out.println(id);
 		String uName = DBLayer.getUserName(id, con);
 		
 		return uName;
